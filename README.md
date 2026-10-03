@@ -74,8 +74,8 @@ OptimalEVCharging/
 ## Deliverables and Priorities
 
 **Tier 1: core**
-- [ ] Municipality-level feature dataset (EV density, housing type, income, POI density, existing public chargers)
-- [ ] Chart: share of listed OpenChargeMap locations that are actually public
+- [ X ] Municipality-level feature dataset (EV density, housing type, income, POI density, existing public chargers)
+- [ X ] Chart: share of listed OpenChargeMap locations that are actually public
 - [ ] Poisson / negative binomial model with dispersion check and diagnostics
 - [ ] Zone opportunity scores (0-100) and a demand-vs-supply gap map
 - [ ] Ranked top-20 candidate zones with short rationale
