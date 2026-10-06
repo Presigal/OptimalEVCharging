@@ -1,0 +1,416 @@
+﻿ine_code,scenario,rank
+28004,base,41.0
+28005,base,52.0
+28006,base,33.0
+28007,base,66.0
+28009,base,12.0
+28010,base,4.0
+28013,base,36.0
+28014,base,38.0
+28015,base,72.0
+28018,base,42.0
+28022,base,2.0
+28023,base,76.0
+28026,base,69.0
+28032,base,44.0
+28033,base,63.0
+28038,base,50.0
+28040,base,56.0
+28041,base,17.0
+28043,base,74.0
+28044,base,49.0
+28045,base,11.0
+28046,base,24.0
+28047,base,67.0
+28049,base,54.0
+28050,base,64.0
+28052,base,79.0
+28053,base,15.0
+28054,base,39.0
+28058,base,30.0
+28059,base,48.0
+28061,base,8.0
+28065,base,21.0
+28066,base,14.0
+28067,base,80.0
+28068,base,34.0
+28072,base,31.0
+28073,base,5.0
+28074,base,57.0
+28075,base,47.0
+28079,base,9.0
+28080,base,51.0
+28082,base,55.0
+28083,base,27.0
+28084,base,20.0
+28085,base,77.0
+28086,base,75.0
+28089,base,60.0
+28090,base,46.0
+28091,base,73.0
+28092,base,13.0
+28096,base,70.0
+28100,base,45.0
+28104,base,6.0
+28106,base,10.0
+28108,base,58.0
+28113,base,37.0
+28115,base,3.0
+28123,base,40.0
+28127,base,19.0
+28129,base,25.0
+28130,base,1.0
+28131,base,71.0
+28132,base,83.0
+28133,base,82.0
+28134,base,53.0
+28141,base,43.0
+28144,base,62.0
+28148,base,78.0
+28149,base,29.0
+28151,base,61.0
+28152,base,23.0
+28154,base,59.0
+28160,base,26.0
+28161,base,18.0
+28164,base,65.0
+28167,base,16.0
+28171,base,68.0
+28172,base,32.0
+28176,base,35.0
+28177,base,22.0
+28180,base,81.0
+28181,base,7.0
+28903,base,28.0
+28004,equal,36.0
+28005,equal,40.0
+28006,equal,24.0
+28007,equal,52.0
+28009,equal,17.0
+28010,equal,5.0
+28013,equal,32.0
+28014,equal,29.0
+28015,equal,65.0
+28018,equal,53.0
+28022,equal,2.0
+28023,equal,76.0
+28026,equal,68.0
+28032,equal,61.0
+28033,equal,69.0
+28038,equal,56.0
+28040,equal,47.0
+28041,equal,20.0
+28043,equal,77.0
+28044,equal,63.0
+28045,equal,16.0
+28046,equal,37.0
+28047,equal,55.0
+28049,equal,41.0
+28050,equal,73.0
+28052,equal,79.0
+28053,equal,22.0
+28054,equal,51.0
+28058,equal,19.0
+28059,equal,48.0
+28061,equal,9.0
+28065,equal,11.0
+28066,equal,18.0
+28067,equal,80.0
+28068,equal,35.0
+28072,equal,50.0
+28073,equal,7.0
+28074,equal,43.0
+28075,equal,46.0
+28079,equal,4.0
+28080,equal,44.0
+28082,equal,59.0
+28083,equal,23.0
+28084,equal,15.0
+28085,equal,78.0
+28086,equal,72.0
+28089,equal,60.0
+28090,equal,49.0
+28091,equal,75.0
+28092,equal,8.0
+28096,equal,64.0
+28100,equal,54.0
+28104,equal,13.0
+28106,equal,6.0
+28108,equal,70.0
+28113,equal,27.0
+28115,equal,3.0
+28123,equal,31.0
+28127,equal,14.0
+28129,equal,38.0
+28130,equal,1.0
+28131,equal,62.0
+28132,equal,82.0
+28133,equal,83.0
+28134,equal,42.0
+28141,equal,45.0
+28144,equal,58.0
+28148,equal,74.0
+28149,equal,33.0
+28151,equal,66.0
+28152,equal,25.0
+28154,equal,57.0
+28160,equal,39.0
+28161,equal,12.0
+28164,equal,67.0
+28167,equal,28.0
+28171,equal,71.0
+28172,equal,30.0
+28176,equal,34.0
+28177,equal,26.0
+28180,equal,81.0
+28181,equal,10.0
+28903,equal,21.0
+28004,demand-heavy,54.0
+28005,demand-heavy,24.0
+28006,demand-heavy,12.0
+28007,demand-heavy,40.0
+28009,demand-heavy,21.0
+28010,demand-heavy,11.0
+28013,demand-heavy,39.0
+28014,demand-heavy,26.0
+28015,demand-heavy,45.0
+28018,demand-heavy,62.0
+28022,demand-heavy,1.0
+28023,demand-heavy,67.0
+28026,demand-heavy,64.0
+28032,demand-heavy,58.0
+28033,demand-heavy,71.0
+28038,demand-heavy,68.0
+28040,demand-heavy,50.0
+28041,demand-heavy,41.0
+28043,demand-heavy,78.0
+28044,demand-heavy,56.0
+28045,demand-heavy,20.0
+28046,demand-heavy,46.0
+28047,demand-heavy,47.0
+28049,demand-heavy,33.0
+28050,demand-heavy,59.0
+28052,demand-heavy,83.0
+28053,demand-heavy,34.0
+28054,demand-heavy,44.0
+28058,demand-heavy,14.0
+28059,demand-heavy,63.0
+28061,demand-heavy,15.0
+28065,demand-heavy,7.0
+28066,demand-heavy,36.0
+28067,demand-heavy,80.0
+28068,demand-heavy,42.0
+28072,demand-heavy,49.0
+28073,demand-heavy,19.0
+28074,demand-heavy,30.0
+28075,demand-heavy,55.0
+28079,demand-heavy,4.0
+28080,demand-heavy,23.0
+28082,demand-heavy,70.0
+28083,demand-heavy,37.0
+28084,demand-heavy,25.0
+28085,demand-heavy,76.0
+28086,demand-heavy,72.0
+28089,demand-heavy,66.0
+28090,demand-heavy,43.0
+28091,demand-heavy,79.0
+28092,demand-heavy,6.0
+28096,demand-heavy,57.0
+28100,demand-heavy,52.0
+28104,demand-heavy,10.0
+28106,demand-heavy,8.0
+28108,demand-heavy,65.0
+28113,demand-heavy,31.0
+28115,demand-heavy,2.0
+28123,demand-heavy,18.0
+28127,demand-heavy,5.0
+28129,demand-heavy,35.0
+28130,demand-heavy,3.0
+28131,demand-heavy,61.0
+28132,demand-heavy,75.0
+28133,demand-heavy,81.0
+28134,demand-heavy,27.0
+28141,demand-heavy,53.0
+28144,demand-heavy,60.0
+28148,demand-heavy,51.0
+28149,demand-heavy,38.0
+28151,demand-heavy,73.0
+28152,demand-heavy,16.0
+28154,demand-heavy,69.0
+28160,demand-heavy,48.0
+28161,demand-heavy,9.0
+28164,demand-heavy,74.0
+28167,demand-heavy,28.0
+28171,demand-heavy,77.0
+28172,demand-heavy,32.0
+28176,demand-heavy,29.0
+28177,demand-heavy,22.0
+28180,demand-heavy,82.0
+28181,demand-heavy,13.0
+28903,demand-heavy,17.0
+28004,gap-heavy,29.0
+28005,gap-heavy,64.0
+28006,gap-heavy,55.0
+28007,gap-heavy,72.0
+28009,gap-heavy,15.0
+28010,gap-heavy,2.0
+28013,gap-heavy,40.0
+28014,gap-heavy,49.0
+28015,gap-heavy,78.0
+28018,gap-heavy,25.0
+28022,gap-heavy,3.0
+28023,gap-heavy,76.0
+28026,gap-heavy,70.0
+28032,gap-heavy,33.0
+28033,gap-heavy,56.0
+28038,gap-heavy,30.0
+28040,gap-heavy,61.0
+28041,gap-heavy,8.0
+28043,gap-heavy,58.0
+28044,gap-heavy,44.0
+28045,gap-heavy,17.0
+28046,gap-heavy,13.0
+28047,gap-heavy,74.0
+28049,gap-heavy,65.0
+28050,gap-heavy,62.0
+28052,gap-heavy,68.0
+28053,gap-heavy,11.0
+28054,gap-heavy,35.0
+28058,gap-heavy,46.0
+28059,gap-heavy,37.0
+28061,gap-heavy,12.0
+28065,gap-heavy,32.0
+28066,gap-heavy,7.0
+28067,gap-heavy,81.0
+28068,gap-heavy,34.0
+28072,gap-heavy,21.0
+28073,gap-heavy,5.0
+28074,gap-heavy,69.0
+28075,gap-heavy,45.0
+28079,gap-heavy,20.0
+28080,gap-heavy,66.0
+28082,gap-heavy,41.0
+28083,gap-heavy,24.0
+28084,gap-heavy,18.0
+28085,gap-heavy,77.0
+28086,gap-heavy,71.0
+28089,gap-heavy,60.0
+28090,gap-heavy,53.0
+28091,gap-heavy,57.0
+28092,gap-heavy,23.0
+28096,gap-heavy,75.0
+28100,gap-heavy,42.0
+28104,gap-heavy,9.0
+28106,gap-heavy,16.0
+28108,gap-heavy,52.0
+28113,gap-heavy,48.0
+28115,gap-heavy,4.0
+28123,gap-heavy,59.0
+28127,gap-heavy,28.0
+28129,gap-heavy,19.0
+28130,gap-heavy,1.0
+28131,gap-heavy,73.0
+28132,gap-heavy,83.0
+28133,gap-heavy,82.0
+28134,gap-heavy,67.0
+28141,gap-heavy,38.0
+28144,gap-heavy,63.0
+28148,gap-heavy,80.0
+28149,gap-heavy,31.0
+28151,gap-heavy,43.0
+28152,gap-heavy,27.0
+28154,gap-heavy,54.0
+28160,gap-heavy,14.0
+28161,gap-heavy,26.0
+28164,gap-heavy,51.0
+28167,gap-heavy,10.0
+28171,gap-heavy,50.0
+28172,gap-heavy,39.0
+28176,gap-heavy,47.0
+28177,gap-heavy,22.0
+28180,gap-heavy,79.0
+28181,gap-heavy,6.0
+28903,gap-heavy,36.0
+28004,no model,51.0
+28005,no model,34.0
+28006,no model,15.0
+28007,no model,50.0
+28009,no model,20.0
+28010,no model,8.0
+28013,no model,37.0
+28014,no model,27.0
+28015,no model,40.0
+28018,no model,56.0
+28022,no model,1.0
+28023,no model,69.0
+28026,no model,61.0
+28032,no model,63.0
+28033,no model,70.0
+28038,no model,67.0
+28040,no model,54.0
+28041,no model,33.0
+28043,no model,77.0
+28044,no model,62.0
+28045,no model,17.0
+28046,no model,45.0
+28047,no model,47.0
+28049,no model,42.0
+28050,no model,65.0
+28052,no model,82.0
+28053,no model,25.0
+28054,no model,46.0
+28058,no model,22.0
+28059,no model,58.0
+28061,no model,10.0
+28065,no model,6.0
+28066,no model,29.0
+28067,no model,80.0
+28068,no model,41.0
+28072,no model,49.0
+28073,no model,16.0
+28074,no model,38.0
+28075,no model,48.0
+28079,no model,4.0
+28080,no model,21.0
+28082,no model,66.0
+28083,no model,32.0
+28084,no model,24.0
+28085,no model,76.0
+28086,no model,73.0
+28089,no model,64.0
+28090,no model,44.0
+28091,no model,78.0
+28092,no model,12.0
+28096,no model,52.0
+28100,no model,55.0
+28104,no model,7.0
+28106,no model,13.0
+28108,no model,71.0
+28113,no model,31.0
+28115,no model,3.0
+28123,no model,14.0
+28127,no model,5.0
+28129,no model,39.0
+28130,no model,2.0
+28131,no model,60.0
+28132,no model,79.0
+28133,no model,81.0
+28134,no model,30.0
+28141,no model,53.0
+28144,no model,57.0
+28148,no model,59.0
+28149,no model,36.0
+28151,no model,72.0
+28152,no model,19.0
+28154,no model,68.0
+28160,no model,43.0
+28161,no model,9.0
+28164,no model,74.0
+28167,no model,35.0
+28171,no model,75.0
+28172,no model,26.0
+28176,no model,28.0
+28177,no model,23.0
+28180,no model,83.0
+28181,no model,11.0
+28903,no model,18.0
