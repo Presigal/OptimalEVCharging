@@ -1,0 +1,8 @@
+lever,param,base,break_even_value,change_needed
+"Utilization (base, at score 50)",util,0.07,0.08007538924855737,0.14393413212224804
+"Selling price, € / kWh incl. VAT",price,0.59,0.6490162878573555,0.10002760653789089
+"Capex, €",capex,110000.0,87294.3597872754,-0.20641491102476905
+"Capex subsidy, share",subsidy,0.0,0.2064149110247691,
+"Electricity cost, € / kWh",energy_cost,0.13,0.08737170612617468,-0.32790995287557945
+"Fixed power charge, € / kW / yr",power_charge,30.0,7.4412669903859765,-0.7519577669871341
+"Net demand growth, per year",demand_growth,0.04,0.07290283247378804,0.8225708118447008
