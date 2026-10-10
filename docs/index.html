@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EV Charging Gaps · Madrid</title>
+<meta name="description" content="Interactive map of public EV charging supply, model-expected supply and opportunity scores for the 179 municipalities of the Comunidad de Madrid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="app">
+  <aside class="panel" id="panel">
+    <header class="panel-head">
+      <div class="title-row">
+        <h1>EV charging gaps <span>Comunidad de Madrid</span></h1>
+        <button class="icon-btn" id="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <p class="lede">Where is public charging thin relative to demand and to what similar municipalities have? A screening tool for a charge-point operator, at municipality level.</p>
+      <div class="stats" id="stats"></div>
+    </header>
+
+    <section class="block">
+      <label class="field-label" for="search">Find a municipality</label>
+      <input id="search" list="muni-list" type="search" placeholder="e.g. Móstoles" autocomplete="off">
+      <datalist id="muni-list"></datalist>
+    </section>
+
+    <section class="block">
+      <label class="field-label" for="layer">Map layer</label>
+      <select id="layer"></select>
+      <p class="layer-desc" id="layer-desc"></p>
+      <div class="legend" id="legend" aria-live="polite"></div>
+    </section>
+
+    <section class="block">
+      <div class="toggle-row">
+        <label class="switch"><input type="checkbox" id="show-chargers"><span></span> Charging sites (OpenChargeMap)</label>
+      </div>
+      <div class="charger-filters" id="charger-filters" hidden>
+        <div class="chips" id="access-chips"></div>
+        <div class="seg" role="radiogroup" aria-label="Minimum power">
+          <button type="button" data-kw="0" class="on">All power</button>
+          <button type="button" data-kw="50">≥ 50 kW</button>
+          <button type="button" data-kw="150">≥ 150 kW</button>
+        </div>
+        <p class="hint" id="charger-count"></p>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="rank" class="on">Ranking</button>
+      <button role="tab" data-tab="place">Municipality</button>
+      <button role="tab" data-tab="model">Model</button>
+      <button role="tab" data-tab="about">About</button>
+    </nav>
+
+    <section class="tab-pane on" id="tab-rank">
+      <p class="hint">The opportunity score combines six percentiles with a weighted geometric mean, so a municipality needs both demand <em>and</em> undersupply to rank high. Move the weights to see how the top 20 changes. Only municipalities with ≥ 5,000 residents are scored.</p>
+      <div class="presets">
+        <button type="button" data-preset="default" class="on">Project weights</button>
+        <button type="button" data-preset="equal">Equal weights</button>
+      </div>
+      <div id="weights"></div>
+      <h3 class="sub">Top 20 <span id="rank-note"></span></h3>
+      <ol class="ranking" id="ranking"></ol>
+    </section>
+
+    <section class="tab-pane" id="tab-place">
+      <div id="place"><p class="empty">Click a municipality on the map, pick one from the ranking, or search above.</p></div>
+    </section>
+
+    <section class="tab-pane" id="tab-model">
+      <p class="hint">Negative binomial (NB2) regression of public charging points per municipality, with log(population) as offset. Each bar is the multiplicative change in points per resident for a one-standard-deviation increase in the predictor. The model's prediction for each municipality is a <strong>peer benchmark</strong>: what similar municipalities have.</p>
+      <div class="seg" id="model-toggle" role="radiogroup" aria-label="Model">
+        <button type="button" data-m="nb" class="on">Negative binomial</button>
+        <button type="button" data-m="poisson">Poisson</button>
+      </div>
+      <div class="forest" id="forest"></div>
+      <ul class="facts">
+        <li><strong>Overdispersed counts.</strong> Pearson dispersion under Poisson is 12.4; the negative binomial (α ≈ 0.80) is clearly preferred. Poisson intervals are shown for comparison and are far too narrow.</li>
+        <li><strong>Fuel-station density is the only robust predictor</strong> (+48% points per resident per SD). Income is borderline (p ≈ 0.06).</li>
+        <li><strong>Low explanatory power</strong> (pseudo-R² ≈ 0.03): supply looks driven by operator decisions more than local fundamentals.</li>
+      </ul>
+    </section>
+
+    <section class="tab-pane" id="tab-about">
+      <div class="prose">
+        <h3>What this shows</h3>
+        <p>Each of the 179 municipalities in the Comunidad de Madrid is compared on public charging supply, resident EV demand and the supply a count model expects for a municipality like it. The opportunity score turns those into a 0–100 ranking for where a new public station is most needed.</p>
+        <h3>Score components</h3>
+        <ul>
+          <li><strong>Undersupply (0.60):</strong> scarcity, resident EVs per public point (0.25); missing points vs. the model (0.20); observed ÷ expected (0.15).</li>
+          <li><strong>Demand (0.30):</strong> resident EVs, fleet-corrected (0.20); population density as a proxy for homes without a garage (0.10).</li>
+          <li><strong>Feasibility (0.10):</strong> fuel stations as conversion sites.</li>
+        </ul>
+        <h3>Things to keep in mind</h3>
+        <ul>
+          <li>“Public” includes membership networks anyone can join. Sites with no listed point count are counted as one point.</li>
+          <li>DGT counts vehicles at the owner's tax address. 19 municipalities with fleet registrations (more than 2× median vehicles per resident) have resident EVs re-estimated.</li>
+          <li>Expected supply is a peer benchmark, not true demand: a region-wide shortage would not show up.</li>
+          <li>OpenChargeMap is crowdsourced; recent sites may be missing. Municipality level hides neighbourhood differences, especially in Madrid city.</li>
+        </ul>
+        <h3>Data</h3>
+        <ul class="sources">
+          <li>Chargers: <a href="https://openchargemap.org/" rel="noopener">OpenChargeMap</a> (CC BY 4.0), pulled Sep 2026</li>
+          <li>Boundaries and POIs: © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap contributors</a> (ODbL), via Geofabrik</li>
+          <li>Population (padrón 2025) and income (ADRH 2023): <a href="https://www.ine.es" rel="noopener">INE</a></li>
+          <li>Vehicles by environmental label, drivers: <a href="https://www.dgt.es" rel="noopener">DGT</a> 2025</li>
+        </ul>
+        <p class="byline">Alejandro Céspedes Fernández · M.S. Statistics for Data Science, UC3M<span id="repo-link"></span></p>
+      </div>
+    </section>
+  </aside>
+
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of municipalities"></div>
+    <div class="map-tip" id="map-tip" hidden></div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
